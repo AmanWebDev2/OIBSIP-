@@ -22,7 +22,6 @@ body {
 
 
 main {
-  max-width: 60vw;
   margin: 0 auto;
 }
 
@@ -81,4 +80,27 @@ main {
 .calc-body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+}
+
+
+@media all and (max-width:450px) {
+  .btn{
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+  }
+  .cal-container {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+    min-width: auto;
+    width: 80%;
+
+  }
+  .calc-screen {
+    padding: 1rem;
+  }
+   
 }
