@@ -40,7 +40,10 @@ Array.from(btn).forEach((btn)=>{
 const evaluateExpression=(expression)=>{
     try {
         let res = eval(expression);
-        calcScreen.value = res;
+        console.log(res);
+        if(res) {
+            calcScreen.value = res;
+        }
     }catch (err) {
         console.error(err);
         errorMsg.style.display = 'block';
@@ -56,4 +59,6 @@ const copyResult=()=>{
     setTimeout(()=>{
         successClipboardCard.style.right = "-100%"
     },2000);
+   
+
 }
