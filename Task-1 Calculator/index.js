@@ -41,7 +41,7 @@ const evaluateExpression=(expression)=>{
     try {
         let res = eval(expression);
         console.log(res);
-        if(res) {
+        if(res !== undefined || res !== null || !isNaN(res) ) {
             calcScreen.value = res;
         }
     }catch (err) {
