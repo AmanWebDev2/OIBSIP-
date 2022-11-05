@@ -104,3 +104,10 @@ main {
   }
    
 }
+
+.error-msg{
+  color: #e25555;
+  font-weight: 700;
+  font-size: 14px;
+  display: none;
+}

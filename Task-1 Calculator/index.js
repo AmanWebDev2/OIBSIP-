@@ -1,5 +1,6 @@
 const btn = document.querySelectorAll('.btn');
 const calcScreen = document.getElementById('calculator-screen');
+const errorMsg = document.querySelector('.error-msg')
 let expression = '';
 Array.from(btn).forEach((btn)=>{
     btn.addEventListener('click',(e)=>{
@@ -36,8 +37,12 @@ Array.from(btn).forEach((btn)=>{
 const evaluateExpression=(expression)=>{
     try {
         let res = eval(expression);
-        console.log(res);
+        calcScreen.value = res;
     }catch (err) {
         console.error(err);
+        errorMsg.style.display = 'block';
+        setTimeout(()=>{
+            errorMsg.style.display = 'none';
+        },2000);
     }
 }
