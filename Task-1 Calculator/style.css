@@ -108,6 +108,11 @@ main {
   .calc-screen {
     padding: 1rem;
   }
+
+  .copy-btn {
+   position: absolute;
+    top: 13%;
+  }
    
 }
 
@@ -143,4 +148,30 @@ main {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 5px;
   transition: all 300ms;
+}
+
+@media all and (max-width:450px) {
+  .btn{
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+  }
+  .cal-container {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+    min-width: auto;
+    width: 80%;
+
+  }
+  .calc-screen {
+    padding: 1rem;
+  }
+
+  .copy-btn {
+   position: absolute;
+    top: 13%;
+  }
+   
 }
