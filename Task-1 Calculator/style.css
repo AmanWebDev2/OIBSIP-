@@ -47,6 +47,7 @@ main {
   padding: 1.4rem 1rem;
   background: #f5f5f5;
   border-radius: 12px;
+  position: relative;
 }
 
 .btn {
@@ -74,7 +75,6 @@ main {
   border: none;
   background: transparent;
   font-size: 18px;
-
 }
 
 .calc-body {
@@ -110,4 +110,30 @@ main {
   font-weight: 700;
   font-size: 14px;
   display: none;
+}
+
+.copy-btn{
+  position: absolute;
+  top: 21%;
+  right: 13%;
+  background-color: #ee9ca7;
+  padding: 5px;
+  border-radius:12px ;
+  color: aliceblue;
+  font-size: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+.success-clipboard {
+  position: fixed;
+  bottom: 0;
+  right: -100%;
+  margin: 12px;
+  color: green;
+  font-weight: 700;
+  background-color: lightgreen;
+  padding: .61rem 1rem;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 5px;
+  transition: all 300ms;
 }

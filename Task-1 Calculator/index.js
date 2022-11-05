@@ -1,6 +1,7 @@
 const btn = document.querySelectorAll('.btn');
 const calcScreen = document.getElementById('calculator-screen');
-const errorMsg = document.querySelector('.error-msg')
+const errorMsg = document.querySelector('.error-msg');
+const successClipboardCard = document.querySelector('.success-clipboard');
 let expression = '';
 Array.from(btn).forEach((btn)=>{
     btn.addEventListener('click',(e)=>{
@@ -8,6 +9,8 @@ Array.from(btn).forEach((btn)=>{
         if(clickedBtn.classList.contains('clearAll') || clickedBtn.classList.contains('evaluate') || clickedBtn.classList.contains('backspace') ){
             if(clickedBtn.classList.contains('evaluate')){
                 evaluateExpression(expression);
+                expression = calcScreen.value
+
             }else if(clickedBtn.classList.contains('clearAll')) {
                 calcScreen.value = '';
                 expression = '';
@@ -45,4 +48,12 @@ const evaluateExpression=(expression)=>{
             errorMsg.style.display = 'none';
         },2000);
     }
+}
+
+const copyResult=()=>{
+    navigator.clipboard.writeText(calcScreen.value);
+    successClipboardCard.style.right = "0%"
+    setTimeout(()=>{
+        successClipboardCard.style.right = "-100%"
+    },2000);
 }
