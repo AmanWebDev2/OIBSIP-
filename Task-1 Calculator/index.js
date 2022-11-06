@@ -39,13 +39,11 @@ Array.from(btn).forEach((btn)=>{
 
 const evaluateExpression=(expression)=>{
     try {
-        let res = eval(expression);
-        console.log(res);
-        if(res !== undefined || res !== null || !isNaN(res) ) {
+        let res = expression && eval(expression);
+        if( res || res !== undefined || res !== null || !isNaN(res) ) {
             calcScreen.value = res;
         }
     }catch (err) {
-        console.error(err);
         errorMsg.style.display = 'block';
         setTimeout(()=>{
             errorMsg.style.display = 'none';
