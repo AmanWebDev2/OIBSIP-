@@ -26,7 +26,6 @@ function uuidv4() {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const type = e.target.getAttribute("data-type");
   if (!isClickEditBtn && inputElem.value) {
     todoListArray.push({
       id: uuidv4(),
@@ -37,14 +36,20 @@ form.addEventListener("submit", (e) => {
     inputElem.value = "";
   } else {
     let elem = todoListArray.find((todo) => todo.id === editId);
-    elem.value = inputElem.value;
-    isClickEditBtn = false;
-    todoSubmit.value = "Add Task";
-    inputElem.value = "";
-    let filteredTodoList = todoListArray.filter((todo) => todo.id !== editId);
-    filteredTodoList = [...filteredTodoList, elem];
-    removeTask(todoListArray, "todo-wrapper");
-    showTodoList();
+    if(elem){
+      elem.value = inputElem.value;
+      isClickEditBtn = false;
+      todoSubmit.value = "Add Task";
+      inputElem.value = "";
+      let filteredTodoList = todoListArray.filter((todo) => todo.id !== editId);
+      filteredTodoList = [...filteredTodoList, elem];
+      removeTask(todoListArray, "todo-wrapper");
+      showTodoList();
+    }else{
+      inputElem.value = "";
+      todoSubmit.value = "Add Task";
+      isClickEditBtn = false;
+    }
   }
 });
 
