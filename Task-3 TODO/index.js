@@ -39,7 +39,7 @@ form.addEventListener("submit", (e) => {
     let elem = todoListArray.find((todo) => todo.id === editId);
     elem.value = inputElem.value;
     isClickEditBtn = false;
-    todoSubmit.value = "Submit";
+    todoSubmit.value = "Add Task";
     inputElem.value = "";
     let filteredTodoList = todoListArray.filter((todo) => todo.id !== editId);
     filteredTodoList = [...filteredTodoList, elem];
